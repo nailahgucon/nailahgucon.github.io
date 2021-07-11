@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -105,10 +106,11 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+	/* includes color of p tag */
 	body, input, textarea, select {
 		font-family: 'Rubik', sans-serif;
 		font-weight: 300;
-		color: #777777;
+		color: #5e5c5c;
 		font-size: 20pt;
 		line-height: 1.75em;
 	}
@@ -234,7 +236,7 @@ input, select, textarea {
 
 		header > p {
 			margin: 0.5em 0 0 0;
-			color: #aaa;
+			color: #5e5c5c;
 		}
 
 		@media screen and (max-width: 736px) {
@@ -281,6 +283,65 @@ input, select, textarea {
 		.icon > .label {
 			display: none;
 		}
+
+/* Modal */
+		.modal-wrapper {
+		background-color: rgba(0, 0, 0, 0.3);
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: all 0.3s ease-in-out;
+		z-index: -1;
+	}
+	
+	.modal-wrapper.open {
+		opacity: 1;
+		z-index: 999;
+	}
+	
+	.modal {
+		background-color: #fff;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+		position: relative;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 600px;
+		max-width: 95%;
+	}
+	
+	.modal-header {
+		background-image: linear-gradient(to right, #006f97, #004d6a);
+		padding: 15px 0;
+	}
+	
+	.modal-header h3 {
+		margin: 0;
+		color: rgb(238, 234, 234);
+	}
+	
+	.modal-body {
+		padding: 15px 20px;
+		overflow: auto;
+		max-height: 40vh;
+		text-align: left;
+	}
+	
+	.modal-body p {
+		font-size: 20px!important;
+		letter-spacing: 0.5px;
+		line-height: 24px;
+		margin: 10px 0 0;
+	}
+	
+	.modal-footer {
+		background-color: #eee;
+		padding: 15px 0;
+	}
 
 /* Skills */
 		.skills-icon-container{
@@ -330,13 +391,20 @@ input, select, textarea {
 			}
 		}
 
-/* Cards */
+/* Cards - for projects */
+	.project-btn{
+		margin-bottom: 10px;
+	}
+
 	.card{
 		margin: 0 auto;
-		background-color: #f7f5f5;
 		padding: 10px;
-		border-radius: 3px;
-		border-left: 10px solid #006f97;
+		border: 2px outset rgba(124, 124, 124, 0.234);
+		border-radius: 10px;
+		/* alternative styling 
+		border-radius: ;
+		background-color: #f7f5f5;
+		border-left: 10px solid #006f97; */
 	}
 
 	.card h3, .card p{
@@ -382,19 +450,24 @@ input, select, textarea {
 		border-radius: 10px;
 		display: grid;
 		grid-template-columns: 0.1fr 1fr 0.1fr;
-		height: 100px;
 		top: 0;
+		overflow: auto;
 		transition: 0.3s;
 	}
 
 	.contact-icon{
 		color: #004d6a;
+		margin-top: 30px;
 	}
 
 	.contact-grid-child{
 		margin-left: 15px;
-		margin-top: 15px;
 		margin-right: 10px;
+	}
+
+	.contact-grid-child h4{
+		margin-top: 25px;
+		margin-bottom: 0;
 	}
 
 	.contact-head{
@@ -403,10 +476,13 @@ input, select, textarea {
 
 	.contact-subhead{
 		color: #777777;
+		min-width: 50px;
+		word-wrap:break-word;
 	}
 
 	.contact-arrow{
-		margin-top: 20px;
+		margin-top: 30px;
+		margin-right: 20px;
 		color: #004d6a;
 	}
 
@@ -834,4 +910,48 @@ input, select, textarea {
 				margin-left: 0.5em;
 			}
 
+		}
+
+/* text animations */
+		/* https://codepen.io/kemicodes/pen/ZEezjpR */
+		h1 {
+			/* color: #100f10;
+			font-size: 14vw;
+			text-transform: uppercase; */
+			/* font-family: "Poppins", sans-serif; */
+			position: relative;
+			/* -webkit-text-stroke: 0.6vw #f7f7fe; */
+			color:#fff;
+		}
+		
+		h1::before {
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 100%;
+			color: #006f97;
+			overflow: hidden;
+			position: absolute;
+			content: attr(data-text);
+			border-right: 2px solid #1f5f7b;
+			-webkit-text-stroke: 0vw #f7f7fe;
+			animation: animate 3s linear infinite;
+		}
+
+		@media screen and (max-width: 380px) {
+			h1{
+				font-size: 9vw!important;
+			}
+		}
+		
+		@keyframes animate {
+			0%,
+			10%{
+				width: 0;
+			}
+		
+			70%,
+			90% {
+				width: 100%;
+			}
 		}

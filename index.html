@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	</head>
@@ -27,12 +28,37 @@
 						<!-- Me -->
 							<article id="home" class="panel intro">
 								<header>
-									<h1>< Nailah Gucon /></h1>
-									<p>Web Developer.</p>
-									<p>NTU Computer Science Undergraduate.</p>
+									<h1 data-text="< Nailah Gucon />">< Nailah Gucon /></h1>
+									<p class="w3-animate-left">Web Developer.</p>
+									<p class="w3-animate-left">Computer Science Undergraduate <br> at NTU.</p>
 									<br>
-									<a href="#" class="tags">About Me</a>
-									<a href="#" class="tags" target="_blank">My Resume</a>
+									<a class="tags w3-animate-left" id="aboutMeBtn">About Me</a>
+									<div class="modal-wrapper" id="modal">
+										<div class="modal">
+											<div class="modal-header">
+												<h3>About Me</h3>
+											</div>
+											<div class="modal-body">
+												<p>
+												Hello! I am currently a Computer Science student at Nanyang Technological University. <br><br>
+												My skills mainly lie in web and mobile development but i'm looking to branch into other branches of computer science,
+												such as Data Science.
+												</p>
+												<br>
+												<!-- <p>
+												I aspire to incorporate better design and usability into web and software development. 
+												My main goal is to be at the forefront of breaking trends and new technology, creating beautiful 
+												and easy-to-use web/software applications.
+												</p> -->
+											</div>
+											<div class="modal-footer">
+												<button id="closeModalBtn" class="tags">Close</button>
+											</div>
+										</div>
+									</div>
+
+									<a href="assets/nailah_resume.pdf" class="tags w3-animate-left" target="_blank">My Resume</a>
+									
 								</header>
 								<a href="#projects" class="pic">
 									<img src="images/site-self-icon.png" alt="" />
@@ -42,7 +68,7 @@
 						<!-- Work -->
 							<article id="projects" class="panel">
 								<header>
-									<h2>Personal Projects</h2>
+									<h2>Personal Projects.</h2>
 								</header>
 								<p>
 									Some personal projects I've worked on during my free time. More projects on my <a href="https://github.com/nailahgucon" target="_blank">GitHub</a>!
@@ -55,25 +81,19 @@
 									<h3>University Notes Blog</h3>
 									<img src="images/ntu-notes-blog.PNG" alt="" /><br>
 									<p>Storage Site for my code and links to my notes on GitHub using Eleventy.</p>
-									<a href="https://nailahgucon-ntu-notes.netlify.app/" class="tags" target="_blank">Site</a>
-									<a href="https://github.com/nailahgucon/ntu-notes" class="tags" target="_blank">Code</a>
+									<a href="https://nailahgucon-ntu-notes.netlify.app/" class="tags project-btn" target="_blank">Site</a>
+									<a href="https://github.com/nailahgucon/ntu-notes" class="tags project-btn" target="_blank">Code</a>
 									</div>
 									</div>
-									<!--
-									<div class="col-6 col-12-medium col-12-small">
-									<div class = "card">
-									yes
-									</div>
-									</div>
-									-->
 									</div>
 								</section>
 							</article>
 
-						<!-- Contact -->
+						<!-- Skills -->
 							<article id="skills" class="panel">
 								<header>
-									<h2>Skills</h2>
+									<h2>Skills.</h2>
+									<p>Various programming languages and technologies I have learnt over the course of my educational journey and on my own.</p>
 								</header>
 							<!-- frontend development -->
 							<div class="skills-icon-container">
@@ -160,7 +180,7 @@
 								
 								<div class="contact-grid-child">
 								<h4 class="contact-head">Gmail</h4>
-								<p class="contact-subhead">nailahgucon@gmail.com</p>
+								<p class="contact-subhead" style="word-wrap: break-word;">nailahgucon&#8203;@gmail.com</p>
 								</div>
 								<div class="contact-grid-child contact-arrow">
 								<i class="fas fa-angle-right fa-3x"></i>
@@ -201,13 +221,6 @@
 								</div>
 								</div>
 								</a>
-								<!-- 
-										<p>Email: nailahgucon@gmail.com</p> 
-										<a href="https://www.linkedin.com/in/nailah-ginylle-gucon-7255b2178/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-										<a href="https://github.com/nailahgucon"><i class="fab fa-github-square fa-2x"></i></a>
-									<br><br>
-									<img src="images/watermark-black.png" alt="">
-									-->
 								</section>
 							</article>
 
@@ -228,6 +241,18 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			const openBtn = document.getElementById('aboutMeBtn');
+			const closeBtn = document.getElementById('closeModalBtn');
+			const modal = document.getElementById('modal');
 
+			openBtn.addEventListener('click', () => {
+				modal.classList.add('open');
+			});
+
+			closeBtn.addEventListener('click', () => {
+				modal.classList.remove('open');
+			});
+			</script>
 	</body>
 </html>
