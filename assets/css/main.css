@@ -155,6 +155,7 @@ input, select, textarea {
 	h1 {
 		font-size: 2.4em;
 		letter-spacing: -0.015em;
+		color: #004d6a;
 	}
 
 	h2 {
@@ -915,82 +916,8 @@ input, select, textarea {
 
 		}
 
-/* text animations */
-		.input-wrapper {
-		  display: block;
-		  font-family: monospace;
-		  font-size: 125%;
-		  width: 50%;
-		  > input,
-		  > .placeholder {
-		    display: block;
-		    appearance: none;
-		    width: 100%;
-		    height: 100%;
-		    background-color: transparent;
-		    border: none;
-		  }
-		  > .placeholder {
-		    pointer-events: none;
-		    @include typed(
-		      "Software Development.",
-		      "Data Science.",
-		      "Artificial Intelligence.",
-		      1.5,
-		      (
-			caret-width: 2px,
-			caret-space: 2px
-		      )
-		    );
-		  }
-		  > input {
-		    &:focus,
-		    &:active {
-		      + .placeholder {
-			display: none;
-		      }
-		    }
-		  }
-		}
-/* 		/* https://codepen.io/kemicodes/pen/ZEezjpR */
-		h1 {
-			/* color: #100f10;
-			font-size: 14vw;
-			text-transform: uppercase; */
-			/* font-family: "Poppins", sans-serif; */
-			position: relative;
-			/* -webkit-text-stroke: 0.6vw #f7f7fe; */
-			color:#fff;
-		}
-		
-		h1::before {
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			color: #006f97;
-			overflow: hidden;
-			position: absolute;
-			content: attr(data-text);
-			border-right: 2px solid #1f5f7b;
-			-webkit-text-stroke: 0vw #f7f7fe;
-			animation: animate 3s linear infinite;
-		}
-
-		@media screen and (max-width: 380px) {
-			h1{
-				font-size: 9vw!important;
-			}
-		}
-		
-		@keyframes animate {
-			0%,
-			10%{
-				width: 0;
-			}
-		
-			70%,
-			90% {
-				width: 100%;
-			}
-		} */
+/* Text Animation */
+.typewrite{
+	text-decoration: none;
+	font-family: "Courier New", monospace;
+}
